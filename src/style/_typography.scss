@@ -1,0 +1,107 @@
+// Headings
+@layer base {
+    h1 {
+        font-size: 64px;
+        line-height: normal;
+        letter-spacing: -0.015em;
+        font-weight: 300;
+      
+        @media (max-width: 768px) {
+          font-size: 48px;
+          line-height: 130%;
+        }
+      }
+      
+      h2 {
+        font-size: 48px;
+        
+        line-height: normal;
+        font-weight: 300;
+      
+        @media (max-width: 768px) {
+          font-size: 36px;
+          line-height: 130%;
+        }
+      }
+      
+      h3 {
+        font-size: 36px;
+        line-height: 140%;
+        letter-spacing: -0.015em;
+        font-weight: 700;
+      
+        @media (max-width: 768px) {
+          font-size: 28px;
+          line-height: 130%;
+        }
+      }
+    }
+    @layer components{
+      // Labels
+      .label-large {
+        font-size: 32px;
+        line-height: 140%;
+        letter-spacing: 0;
+        font-weight: 700;
+      
+        @media (max-width: 768px) {
+          font-size: 24px;
+        }
+      }
+      
+      .label-medium {
+        font-size: 24px;
+        line-height: 140%;
+        letter-spacing: 0;
+        font-weight: 700;
+      
+        @media (max-width: 768px) {
+          font-size: 20px;
+        }
+      }
+      
+      .label-small {
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0;
+        font-weight: 700;
+      
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+      
+      // Body Text
+      .body-large {
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: 0;
+        font-weight: 400;
+        color: gray;
+        @media (max-width: 768px) {
+          font-size: 18px;
+        }
+      }
+      
+      .body-medium {
+        font-size: 16px;
+        line-height: 160%;
+        letter-spacing: 0;
+        font-weight: 400;
+      
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+      
+      .body-small {
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: 0;
+        font-weight: 400;
+      
+        @media (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+    }
