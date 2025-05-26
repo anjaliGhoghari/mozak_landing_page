@@ -19,30 +19,30 @@ function Footer() {
                 <span className='text-orange'>Trustless Systems</span>
               </h3>
             </div>
-            <div className='flex gap-16 items-start'>
-              <div className=''>
+            <div className='flex gap-16 items-start body-medium'>
+              <div>
                 <p className='label-small py-8 border-b border-black/15 '>Devlopers</p>
                 <div className='text-[#00000099] flex gap-5 flex-col mt-8 '>
-                  <a className='body-medium'>Documentation</a>
-                  <a className='body-medium'>API Docs</a>
-                  <a className='body-medium'>Changelog</a>
-                  <a className='body-medium'>Github</a>
+                  <a>Documentation</a>
+                  <a>API Docs</a>
+                  <a>Changelog</a>
+                  <a>Github</a>
                 </div>
               </div>
               <div>
                 <p className='label-small py-8 border-b border-black/15 '>Company</p>
                 <div className='text-[#00000099] flex gap-5 flex-col mt-8 '>
-                  <a className='body-medium'>About</a>
-                  <a className='body-medium'>Blog</a>
-                  <a className='body-medium'>We’re hiring</a>
+                  <a>About</a>
+                  <a>Blog</a>
+                  <a>We’re hiring</a>
                   
                 </div>
               </div>
               <div>
                 <p className='label-small py-8 border-b border-black/15 '>Community</p>
-                <div className='text-[#00000099] flex gap-5 flex-col mt-8 '>
-                  <a className='body-medium'>X (Twitter)</a>
-                  <a className='body-medium'>Telegram</a>
+                <div className='text-[#00000099]  flex gap-5 flex-col mt-8 '>
+                  <a>X (Twitter)</a>
+                  <a>Telegram</a>
                  
                 </div>
               </div>

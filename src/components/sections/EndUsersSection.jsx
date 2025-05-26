@@ -39,7 +39,7 @@ function EndUsersSection() {
                 </h2>
                 <Accordion type="single" collapsible>
                     {list.map((item, index) => (
-                        <AccordionItem key={index} value={`item-${index}`}>
+                        <AccordionItem key={index} value={`item-${index}`} className="border-b border-black/15">
                             <AccordionTrigger>
                                 <div className="flex justify-between items-center w-full">
                                     <p className="label-large py-11">{item.title}</p>

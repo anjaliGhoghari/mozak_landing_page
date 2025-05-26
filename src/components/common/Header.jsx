@@ -11,46 +11,53 @@ function Header() {
             <header className='sticky z-50 top-0 border-b border-black/10 bg-white'>
                 <div className='py-6 container'>
                 <div className='flex justify-between items-center text-center'>
-                    <img src={logo}></img>
+                    <img src={logo} alt="Logo"></img>
                     <nav className='max-md:hidden' >
-                        <ul className='flex gap-8'>
-                            <li><a>Docs</a></li> 
-                            <li><a>Career</a></li>
-                            <li><a>About</a></li>
+                        <ul className='flex label-small gap-8'>
+                            <li><a href="#">Docs</a></li> 
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">About</a></li>
                         </ul>
                     </nav>
-                    <a className='max-md:hidden'>Get update<img className='inline '  src={rightarrow} /></a> 
+                    <a href="#" className='max-md:hidden'>Get update<img className='inline' src={rightarrow} alt="Right arrow" /></a> 
                    
                     <Menu as="div" className="relative md:hidden">
-                        <MenuButton><img className='max-w-[25px] pb-2 hidden max-md:inline' src={humburger}></img></MenuButton>
-                        <MenuItems anchor="bottom" className="p-2 flex gap-2 flex-col ">
-                            <MenuItem>
-                                <a className="Docs" href="">
-                                Docs
-                                </a>
-                            </MenuItem>
-                            <MenuItem>
-                                <a className="Career" href="">
-                                Career   
-                              </a>
-                            </MenuItem>
-                            <MenuItem>
-                                <a className="About " href="">
-                                About
-                                </a>
-                            </MenuItem>
-                            <MenuItem>
-                            <a>
-                            <img className='inline'src={rightarrow} />
-                            </a> 
-                               
-                            </MenuItem>
+                        <MenuButton><img className='w-6 cursor-pointer' src={humburger} alt="Menu"></img></MenuButton>
+                        <MenuItems className="absolute right-0 mt-2 w-48 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <div className="py-1">
+                                <MenuItem>
+                                    {({ active }) => (
+                                        <a href="#" className={`${active ? 'bg-gray-100' : ''} block px-4 py-2 text-sm`}>
+                                            Docs
+                                        </a>
+                                    )}
+                                </MenuItem>
+                                <MenuItem>
+                                    {({ active }) => (
+                                        <a href="#" className={`${active ? 'bg-gray-100' : ''} block px-4 py-2 text-sm`}>
+                                            Career
+                                        </a>
+                                    )}
+                                </MenuItem>
+                                <MenuItem>
+                                    {({ active }) => (
+                                        <a href="#" className={`${active ? 'bg-gray-100' : ''} block px-4 py-2 text-sm`}>
+                                            About
+                                        </a>
+                                    )}
+                                </MenuItem>
+                                <MenuItem>
+                                    {({ active }) => (
+                                        <a href="#" className={`${active ? 'bg-gray-100' : ''} block px-4 py-2 text-sm`}>
+                                            Get update <img className='inline' src={rightarrow} alt="Right arrow" />
+                                        </a>
+                                    )}
+                                </MenuItem>
+                            </div>
                         </MenuItems>
                     </Menu>
                     </div>
                     </div>
-
-
             </header>
         </>
     )
