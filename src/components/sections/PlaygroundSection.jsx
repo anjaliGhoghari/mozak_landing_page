@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import flash from '../../assets/icons/flash.svg';
@@ -19,11 +19,22 @@ import owl_flash from '../../assets/icons/owl-flash.svg';
 import information from '../../assets/icons/information.svg';
 import up_green from '../../assets/icons/up-green.svg';
 import down_red from '../../assets/icons/down-red.svg';
+import twitter_simple from '../../assets/icons/twitter-simple.svg';
+import telegram from '../../assets/icons/telegram.svg';
+import black_white from '../../assets/icons/black-white.svg';
 
 
 
 
 function PlaygroundSection() {
+    const [tooltipContent, setTooltipContent] = useState('Copy');
+    const handleCopy = (text) => {
+        const textToCopy = text;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            setTooltipContent('Copied!');
+            setTimeout(() => setTooltipContent('Copy'), 2000); // reset to "Copy" after 1.5s
+        });
+    };
     return (
         <>
             <section className='container pt-8'>
@@ -66,31 +77,71 @@ function PlaygroundSection() {
                                                 <img src={owl_flash} alt="Owl Flash" className='w-[10px] h-[10px]' />
                                                 <img src={information} alt="Information" className='w-[10px] h-[10px]' />
                                                 <Tooltip anchorSelect="#logos" className='!tooltip' place='top'>
-                                                    DexScreener paid/unpaid (refer DexScreener boosts for context)<br/><br/>If paid then it will show this pill and if unpaid then no pill in card
+                                                    DexScreener paid/unpaid (refer DexScreener boosts for context)<br /><br />If paid then it will show this pill and if unpaid then no pill in card
                                                 </Tooltip>
                                             </div>
                                         </div>
 
                                         <div className='flex gap-[6px] mb-4'>
-                                            <p className='text-[11px] text-[#C3C6CC] font-medium'>CA: 0x7e...9F27</p>
-                                            <img src={file_copy} />
-                                            <img src={twitter} />
-                                            <img src={share} />
+                                            <p id='CA' className='text-[11px] text-[#C3C6CC] font-medium'>CA: 0x7e...9F27
+                                                <Tooltip anchorSelect="#CA" className='!tooltip' place='bottom'>
+                                                    CA: Ox7egh43kmo9p1w8je9f27
+                                                </Tooltip>
+                                            </p>
+                                            <img id="copy" onClick={()=>handleCopy("CA: Ox7egh43kmo9p1w8je9f27")} src={file_copy} alt="Copy icon" className="cursor-pointer" />
+                                            <Tooltip anchorSelect="#copy" className='!tooltip' place='bottom'>
+                                                {tooltipContent}
+                                            </Tooltip>
+                                            <img id="twitter" src={twitter} alt="twitter icon" className="cursor-pointer" />
+                                            <Tooltip anchorSelect="#twitter" className='!tooltip' place='bottom'>
+                                                search on twitter
+                                            </Tooltip>
+                                            <img id='share' src={share} alt='share' className='cursor-pointer' />
+                                            <Tooltip anchorSelect="#share" className='!tooltip' place='bottom' clickable openOnClick>
+                                                share
+                                                <div className='flex py-1  border-b border-white/15 cursor-pointer'>
+                                                    <img src={twitter_simple} />
+                                                    <img src={telegram} />
+                                                    <img src={black_white} />
+                                                </div>
+                                                <div className='flex flex-col py-1'>
+                                                    <div className='flex gap-1'>
+                                                        <p id='CA' className='text-[11px] text-[#C3C6CC] font-medium'>CA: 0x7e...9F27</p>
+                                                        <img id="copy" onClick={()=>handleCopy("CA: Ox7egh43kmo9p1w8je9f27")} src={file_copy} alt="Copy icon" className="cursor-pointer" />
+                                                        <Tooltip anchorSelect="#copy" className='!tooltip' place='bottom'>
+                                                            {tooltipContent}
+                                                        </Tooltip>
+                                                    </div>
+                                                    <div className='flex gap-1'>
+                                                        <p id='url' className='text-[11px] text-[#C3C6CC] font-medium'>Url: https://flau..
+                                                            <Tooltip anchorSelect="#url" className='!tooltip' place='bottom'>
+                                                            Url: https://flaunch.gg/base/coin/0xa3f9b7416c43390c51bea7374c079c6c04efc563
+                                                            </Tooltip>
+                                                        </p>
+
+                                                        <img id="copy-url" onClick={()=>handleCopy("Url: https://flaunch.gg/base/coin/0xa3f9b7416c43390c51bea7374c079c6c04efc563")} src={file_copy} alt="Copy icon" className="cursor-pointer" />
+                                                        <Tooltip anchorSelect="#copy-url" className='!tooltip' place='bottom'>
+                                                            {tooltipContent}
+                                                        </Tooltip>
+                                                    </div>
+                                                </div>
+                                            </Tooltip>
+
                                         </div>
                                         <div className='flex text-center items-center gap-1'>
                                             <div id='volume' className=' cursor-pointer bg-[rgba(252,191,4,0.12)] gap-[2px] leading-4 py-[2px] flex px-2 rounded-[8px] text-[10px] font-medium text-[#FCBF04]'> <img src={group} className='' />138
-                                            <Tooltip anchorSelect="#volume" className='!tooltip' place='bottom'>
-                                            12.5K                                                
-                                            </Tooltip>
+                                                <Tooltip anchorSelect="#volume" className='!tooltip' place='bottom'>
+                                                    12.5K
+                                                </Tooltip>
                                             </div>
                                             <div id='prev-graduations' className=' cursor-pointer bg-[rgba(252,191,4,0.12)] gap-[2px] leading-4 py-[2px] flex px-2 rounded-[8px] text-[10px] font-medium text-[#FCBF04]'> <img src={contacts_book} className='' />1000.49
-                                            <Tooltip anchorSelect="#prev-graduations" className='!tooltip' place='bottom'>
-                                            1000
+                                                <Tooltip anchorSelect="#prev-graduations" className='!tooltip' place='bottom'>
+                                                    1000
                                                 </Tooltip>
                                             </div>
                                             <div id='total-holders' className=' cursor-pointer bg-[rgba(252,191,4,0.12)] gap-[2px] leading-4 py-[2px] flex px-2 rounded-[8px] text-[10px] font-medium text-[#FCBF04]'> <img src={wallet} className='' />12
-                                            <Tooltip anchorSelect="#total-holders" className='!tooltip' place='bottom'>
-                                            Total holders
+                                                <Tooltip anchorSelect="#total-holders" className='!tooltip' place='bottom'>
+                                                    Total holders
                                                 </Tooltip>
                                             </div>
                                         </div>
@@ -102,15 +153,15 @@ function PlaygroundSection() {
                                                 <span className='text-[#7FE76F]'>$680K</span>
                                                 <img src={up_green} alt="Up" className='w-[10px] h-[10px]' />
                                                 <Tooltip anchorSelect="#market-cap" className='!tooltip' place='right'>
-                                                market-cap
+                                                    market-cap
                                                 </Tooltip>
                                             </div>
-                                            <div id='volume' className=' cursor-pointer flex items-center justify-end gap-[4px]'>
+                                            <div id='vol-real' className=' cursor-pointer flex items-center justify-end gap-[4px]'>
                                                 <span className='text-white leading-1'>Vol:</span>
                                                 <span className='text-[#F68989]'>$680K</span>
                                                 <img src={down_red} alt="Down" className='w-[10px] h-[10px]' />
-                                                <Tooltip anchorSelect="#volume" className='!tooltip' place='right'>
-                                                Volume
+                                                <Tooltip anchorSelect="#vol-real" className='!tooltip' place='right'>
+                                                    Volume
                                                 </Tooltip>
                                             </div>
                                         </div>
